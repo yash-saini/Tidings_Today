@@ -17,7 +17,7 @@ export default function NewsItems(props) {
       
             <h5 className="card-title" >{props.title}</h5>
             <p className="card-text" >{props.desc}</p>
-            <Link to={props.urlText} target="_blank" className="btn btn-sm btn-primary">Read More</Link>
+            <Link to={props.urlText} target="_blank" className="btn btn-sm btn-dark">Read More</Link>
         </div>
 </div>
     </div>

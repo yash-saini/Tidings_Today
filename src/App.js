@@ -42,7 +42,7 @@ function App() {
    </Routes>
 
    <Routes>
-        <Route exact path="/" element={<News/>} />
+        <Route exact path="/" element={<News dorl={dorl}/>} />
    </Routes>
 
   
