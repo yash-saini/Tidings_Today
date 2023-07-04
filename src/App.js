@@ -16,7 +16,7 @@ function App() {
           {
               navbarchange('dark')
               changelabel("Dark Mode on")
-              document.body.style.backgroundColor='#3D0C02'
+              document.body.style.backgroundColor=  "#166D90"
       
           }
           else

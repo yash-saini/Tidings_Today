@@ -4,29 +4,43 @@ import NewsItems from './NewsItems'
 export default function News(props) {
 
 const[page,updatepage]=useState(1)
+const[totalResults,checkpagesize]=useState()
+const[isemptypage,checknextemptypage]=useState(false)
 
 const [news_articles, setNewsArticles] = useState([])
 const getfromapi = async () =>{
-  const response= await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=d69bd0630a614eca93d93c51bbefc470")
+  const response= await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=d69bd0630a614eca93d93c51bbefc470&page=1&pageSize=20")
   const data = await response.json()
     setNewsArticles(data.articles)
+    checkpagesize(data.totalResults)
 }
 
 const prevpage = async () =>{
+  checknextemptypage(false)
+
 updatepage( prevpage=>prevpage-1)
-const var_name=`https://newsapi.org/v2/top-headlines?country=us&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page}`
+const var_name=`https://newsapi.org/v2/top-headlines?country=us&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page - 1}&pageSize=20`
 const response= await fetch(var_name)
 const data = await response.json()
   setNewsArticles(data.articles)
+ 
 
 }
 const nextpage = async () =>{
+
+  if (page + 1 > Math.ceil(totalResults/20))
+  {
+    checknextemptypage(true)
+  }
+  else 
+  {
   updatepage( nextpage=>nextpage+1)
-  const var_name=`https://newsapi.org/v2/top-headlines?country=us&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page}`
+  checknextemptypage(false)
+  const var_name=`https://newsapi.org/v2/top-headlines?country=us&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page + 1}&pageSize=20`
   const response= await fetch(var_name)
   const data = await response.json()
     setNewsArticles(data.articles)
-
+  }
 }
 
 useEffect(() => {
@@ -52,7 +66,7 @@ useEffect(() => {
       </div>
       <div className='container d-flex justify-content-between'>
       <button type="button" disabled={page <=1 } className="btn btn-outline-info" onClick={prevpage}>&larr; Previous</button>
-      <button type="button" className="btn btn-outline-info" onClick={nextpage}>Next &rarr;</button>
+      <button type="button" disabled={isemptypage} className="btn btn-outline-info" onClick={nextpage}>Next &rarr;</button>
       </div>   
         
         
