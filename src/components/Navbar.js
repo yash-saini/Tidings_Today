@@ -27,7 +27,25 @@ export default function Navbar(props) {
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
  */} 
-   <div className='container '>
+<div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul className="navbar-nav">
+        <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="/" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+          </Link>
+          <ul className={`dropdown-menu dropdown-menu-${props.dorl} bg-${props.dorl}`} aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><Link className="dropdown-item" to="/business">Business</Link></li>
+            <li><Link className="dropdown-item" to="/entertainment">Entertainment</Link></li>
+            <li><Link className="dropdown-item" to="/health">Health</Link></li>
+            <li><Link className="dropdown-item" to="/science">Science</Link></li>
+            <li><Link className="dropdown-item" to="/sports">Sports</Link></li>
+            <li><Link className="dropdown-item" to="/technology">Technology</Link></li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>  
+     <div className='container '>
        <div className="form-check form-switch d-flex justify-content-end">
             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.darkmode} />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={{color : props.dorl ==='light' ? 'black':'white'}}>{props.buttonlabel}</label>

@@ -3,7 +3,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import News from './components/News';
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 
 
 function App() {
@@ -42,8 +42,29 @@ function App() {
    </Routes>
 
    <Routes>
-        <Route exact path="/" element={<News dorl={dorl}/>} />
+        <Route exact path="/" element={<News dorl={dorl} pageSize={5} country={"in"} category={"general"}/>} />
    </Routes>
+   <Routes>
+        <Route exact path="/health" element={<News dorl={dorl} pageSize={5} country={"in"} category={"health"}/>} />
+   </Routes>
+   <Routes>
+        <Route exact path="/entertainment" element={<News dorl={dorl} pageSize={5} country={"in"} category={"entertainment"}/>} />
+   </Routes>
+   <Routes>
+        <Route exact path="/business" element={<News dorl={dorl} pageSize={5} country={"in"} category={"business"}/>} />
+   </Routes>
+   <Routes>
+        <Route exact path="/science" element={<News dorl={dorl} pageSize={5} country={"in"} category={"science"}/>} />
+   </Routes>
+   <Routes>
+        <Route exact path="/sports" element={<News dorl={dorl} pageSize={5} country={"in"} category={"sports"}/>} />
+   </Routes>
+   <Routes>
+        <Route exact path="/technology" element={<News dorl={dorl} pageSize={5} country={"in"} category={"technology"}/>} />
+   </Routes>
+
+
+
 
   
    </Router>

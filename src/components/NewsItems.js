@@ -10,13 +10,14 @@ export default function NewsItems(props) {
   Newscallingtitle(); // Invoke the function when the component mounts
 }); */
   return (
-    <div className='container' style={{display:"flex",width: "25rem",justifyContent: 'center'}}>
+    <div className='container' style={{display:"flex",justifyContent: 'center'}}>
       <div className="card"  >
         <img src= {props.url} className="card-img-top" alt="News"/>
         <div className="card-body">
       
             <h5 className="card-title" >{props.title}</h5>
             <p className="card-text" >{props.desc}</p>
+            <p className="card-text"><small className="text-muted">Written by : {props.author ? props.author : "Anonymous"} on {new Date(props.publishedAt).toGMTString()} </small></p>
             <Link to={props.urlText} target="_blank" className="btn btn-sm btn-dark">Read More</Link>
         </div>
 </div>
