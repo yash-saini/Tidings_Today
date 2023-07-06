@@ -4,7 +4,7 @@ import Spinner from './Spinner'
 
 export default function About() {
   const[loadSpinner,Spinner_Loading]=useState(true)
-
+  document.title="Tidings Today | About"
   const run_spinner = () =>{
     <Spinner> </Spinner>
     setTimeout(() => {
@@ -13,6 +13,7 @@ export default function About() {
   }
 
   useEffect(() => {
+    
     const timing= setTimeout(() => {
         Spinner_Loading(false)
       }, 2000);
@@ -26,7 +27,7 @@ export default function About() {
   
   return (
     <>
-
+    
     <div className='container my-3' style={{display:"flex",width: "500rem",justifyContent: 'center'}}>
       <div className="card my-10" >
      

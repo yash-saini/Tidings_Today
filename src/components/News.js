@@ -10,39 +10,32 @@ const[totalResults,checkpagesize]=useState()
 const[loadSpinner,Spinner_Loading]=useState(false)
 
 const [news_articles, setNewsArticles] = useState([])
+
+const capitalize_title = () =>{
+
+
+  const str1=props.category.charAt(0).toUpperCase() + props.category.slice(1)
+  return (str1)
+}
 const getfromapi = async () =>{
-  const response= await fetch(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=d69bd0630a614eca93d93c51bbefc470&page=1&pageSize=${props.pageSize}`)
+  const response= await fetch(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page}&pageSize=${props.pageSize}`)
   Spinner_Loading(true)
   const data = await response.json()
     setNewsArticles(data.articles)
     checkpagesize(data.totalResults)
   Spinner_Loading(false) 
+  document.title=`Tidings Today | ${capitalize_title()} `
 }
 
 const prevpage = async () =>{
-
-
-updatepage( prevpage=>prevpage-1)
-const var_name=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page - 1}&pageSize=${props.pageSize}`
-const response= await fetch(var_name)
-Spinner_Loading(true)
-const data = await response.json()
-  setNewsArticles(data.articles)
-Spinner_Loading(false)
-
+updatepage(page-1)
+getfromapi()
 }
 const nextpage = async () =>{
 
- 
-  
-  updatepage( nextpage=>nextpage+1)
- 
-  const var_name=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page + 1}&pageSize=${props.pageSize}`
-  const response= await fetch(var_name)
-  Spinner_Loading(true)
-  const data = await response.json()
-    setNewsArticles(data.articles)
-  Spinner_Loading(false)
+updatepage(page+1)
+getfromapi()
+
 }
 
 useEffect(() => {
