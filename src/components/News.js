@@ -29,18 +29,18 @@ const getfromapi = async () =>{
 
 const prevpage = async () =>{
 updatepage(page-1)
-getfromapi()
+
 }
 const nextpage = async () =>{
 
 updatepage(page+1)
-getfromapi()
+
 
 }
 
 useEffect(() => {
   getfromapi()
-}, [])
+}, [page])
 
   return (
     <div className='container my-3' >
