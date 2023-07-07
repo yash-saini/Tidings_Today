@@ -5,6 +5,12 @@ This application built on React.js displays various news articles fetched from N
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Various application screenshots:-
+![Alt text](image.png)
+
+![Alt text](image-1.png)
+
+![Alt text](image-2.png)
 ## Available Scripts
 
 In the project directory, you can run:
