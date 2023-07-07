@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Tidings Today
+
+## Overview
+This application built on React.js displays various news articles fetched from News API website. The application hosts several features namely Dark Mode/ Various news categories/ Next and prev buttons/ About section / Loading spinner/ Loading bar / news-items cards.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Developed by:-
+Yash Saini
