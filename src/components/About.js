@@ -3,14 +3,10 @@ import { useState,useEffect } from 'react'
 import Spinner from './Spinner'
 
 export default function About(props) {
+
   const[loadSpinner,Spinner_Loading]=useState(true)
   document.title="Tidings Today | About"
-  const run_spinner = () =>{
-    <Spinner> </Spinner>
-    setTimeout(() => {
-      Spinner_Loading(null)
-    }, 2000);
-  }
+
 
   useEffect(() => {
     
@@ -20,7 +16,7 @@ export default function About(props) {
       }, 2000);
     return ()=>{clearTimeout(timing)};
   }, 
-    []);
+    );
     if (loadSpinner)
     {
       return <Spinner></Spinner>

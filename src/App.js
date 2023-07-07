@@ -7,6 +7,7 @@ import React, {useState} from 'react'
 import LoadingBar from 'react-top-loading-bar'
 
 function App() {
+     const apikey=process.env.REACT_APP_API_KEY
      const [buttonlabel,changelabel] = useState("Dark Mode On")
 
      const [dorl,navbarchange] = useState('light')
@@ -48,25 +49,25 @@ function App() {
    </Routes>
 
    <Routes>
-        <Route exact path="/" element={<News progressLoadBar={progressLoadBar} dorl={dorl} pageSize={5} country={"in"} category={"general"}/>} />
+        <Route exact path="/" element={<News progressLoadBar={progressLoadBar} apikey={apikey} dorl={dorl} pageSize={5} country={"in"} category={"general"}/>} />
    </Routes>
    <Routes>
-        <Route exact path="/health" element={<News progressLoadBar={progressLoadBar} dorl={dorl} pageSize={5} country={"in"} category={"health"}/>} />
+        <Route exact path="/health" element={<News progressLoadBar={progressLoadBar} apikey={apikey} dorl={dorl} pageSize={5} country={"in"} category={"health"}/>} />
    </Routes>
    <Routes>
-        <Route exact path="/entertainment" element={<News progressLoadBar={progressLoadBar} dorl={dorl} pageSize={5} country={"in"} category={"entertainment"}/>} />
+        <Route exact path="/entertainment" element={<News progressLoadBar={progressLoadBar} apikey={apikey} dorl={dorl} pageSize={5} country={"in"} category={"entertainment"}/>} />
    </Routes>
    <Routes>
-        <Route exact path="/business" element={<News progressLoadBar={progressLoadBar} dorl={dorl} pageSize={5} country={"in"} category={"business"}/>} />
+        <Route exact path="/business" element={<News progressLoadBar={progressLoadBar} apikey={apikey} dorl={dorl} pageSize={5} country={"in"} category={"business"}/>} />
    </Routes>
    <Routes>
-        <Route exact path="/science" element={<News progressLoadBar={progressLoadBar} dorl={dorl} pageSize={5} country={"in"} category={"science"}/>} />
+        <Route exact path="/science" element={<News progressLoadBar={progressLoadBar} apikey={apikey} dorl={dorl} pageSize={5} country={"in"} category={"science"}/>} />
    </Routes>
    <Routes>
-        <Route exact path="/sports" element={<News progressLoadBar={progressLoadBar} dorl={dorl} pageSize={5} country={"in"} category={"sports"}/>} />
+        <Route exact path="/sports" element={<News progressLoadBar={progressLoadBar} apikey={apikey} dorl={dorl} pageSize={5} country={"in"} category={"sports"}/>} />
    </Routes>
    <Routes>
-        <Route exact path="/technology" element={<News progressLoadBar={progressLoadBar} dorl={dorl} pageSize={5} country={"in"} category={"technology"}/>} />
+        <Route exact path="/technology" element={<News progressLoadBar={progressLoadBar} apikey={apikey}  dorl={dorl} pageSize={5} country={"in"} category={"technology"}/>} />
    </Routes>
 
 

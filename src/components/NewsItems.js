@@ -11,9 +11,9 @@ export default function NewsItems(props) {
 }); */
   return (
     <div className='container' style={{display:"flex",justifyContent: 'center'}}>
-      <div className="card"  >
-        <img src= {props.url} className="card-img-top" alt="News"/>
-        <div className="card-body">
+      <div className="card h-80"  >
+        <img src= {props.url} className="card-img-top" alt="News" style={{ objectFit: 'cover', height: '200px' }}/>
+        <div className="card-body d-flex flex-column justify-content-between">
       
             <h5 className="card-title" >{props.title}</h5>
             <p className="card-text" >{props.desc}</p>

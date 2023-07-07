@@ -12,13 +12,12 @@ const[loadSpinner,Spinner_Loading]=useState(false)
 const [news_articles, setNewsArticles] = useState([])
 
 const capitalize_title = () =>{
-
-
   const str1=props.category.charAt(0).toUpperCase() + props.category.slice(1)
   return (str1)
 }
+
 const getfromapi = async () =>{
-  const response= await fetch(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=d69bd0630a614eca93d93c51bbefc470&page=${page}&pageSize=${props.pageSize}`)
+  const response= await fetch(`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`)
   Spinner_Loading(true)
   props.progressLoadBar(10)
   const data = await response.json()
@@ -45,6 +44,7 @@ updatepage(page+1)
 
 useEffect(() => {
   getfromapi()
+  //eslint-disable-next-line
 }, [page])
 
   return (
