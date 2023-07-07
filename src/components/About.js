@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Spinner from './Spinner'
 
-export default function About() {
+export default function About(props) {
   const[loadSpinner,Spinner_Loading]=useState(true)
   document.title="Tidings Today | About"
   const run_spinner = () =>{
@@ -14,6 +14,7 @@ export default function About() {
 
   useEffect(() => {
     
+    props.progressLoadBar(10)
     const timing= setTimeout(() => {
         Spinner_Loading(false)
       }, 2000);
@@ -24,7 +25,10 @@ export default function About() {
     {
       return <Spinner></Spinner>
     }
-  
+    props.progressLoadBar(30)
+    props.progressLoadBar(100)
+
+
   return (
     <>
     
